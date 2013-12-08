@@ -1,0 +1,41 @@
+{
+  "size": 5,
+  "models": [
+    {
+      "length": 2,
+      "x": 0,
+      "y": 2,
+      "dir": "horizontal"
+    },
+    {
+      "length": 2,
+      "x": 2,
+      "y": 2,
+      "dir": "vertical"
+    },
+    {
+      "length": 2,
+      "x": 2,
+      "y": 0,
+      "dir": "horizontal"
+    },
+    {
+      "length": 2,
+      "x": 0,
+      "y": 0,
+      "dir": "vertical"
+    },
+    {
+      "length": 2,
+      "x": 4,
+      "y": 0,
+      "dir": "vertical"
+    },
+    {
+      "length": 2,
+      "x": 1,
+      "y": 4,
+      "dir": "horizontal"
+    }
+  ]
+}
