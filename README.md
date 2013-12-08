@@ -5,5 +5,8 @@ To run use:
 
 $ node contest.js level1.json
 
-The first model in the json file is alway a player's car
-and the finish is on the right border on the same wall.
+Each level is represented with json file where
+the first model is always the player's car.
+The finish is on the right border on the same row.
+
+The solution is being searched with A* algorigthm
