@@ -174,24 +174,23 @@ function expand(state, known_states) {
   var new_states = get_possible_states(state),
       idx, next_state, winners
 
-  known_states = known_states || {
+  merge_states(known_states, new_states)
+
+  return find_new_state(known_states)
+}
+
+function solver(state) {
+  var known_states = {
     states: [],
     map: {}
+  },
+  next = state
+
+  while (next = expand(next, known_states)) {
+    if (next.getScore() === 0) return next
   }
 
-  winners = new_states
-    .filter(function(st) {
-      return st.getScore() === 0
-    })
-
-  if (winners.length) return winners[0]
-
-  merge_states(known_states, new_states)
-  next_state = find_new_state(known_states)
-
-  if (!next_state) return null
-
-  return expand(next_state, known_states)
+  return null
 }
 
 var data = require('./' + process.argv[2]),
@@ -200,12 +199,13 @@ var data = require('./' + process.argv[2]),
 console.log('initial state:')
 console.log(state.toString())
 
-var result = expand(state)
+var result = solver(state)
 
 if (!result) {
   console.log('Path not found')
 } else {
   console.log('Solution:')
+  //console.log(result.toString())
   result.printPath()
 }
 
